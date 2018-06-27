@@ -22,6 +22,15 @@ p = zeros(size(X, 1), 1);
 %
 
 
+X=[ones(m,1) X];
+
+for i=1:m
+  a1=X(i,:)';
+  a2=[1;sigmoid(Theta1*a1)];
+  a3=sigmoid(Theta2 * a2);
+  [m,idx]=max(a3');
+  p(i)=idx;
+end
 
 
 
